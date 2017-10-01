@@ -1,0 +1,70 @@
+body {
+	margin: 16px;
+}
+h4 {
+	color: gray;
+}
+.tab ul {
+	list-style: none;
+	height: 25px;
+	font-size: 12px;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
+.tab li {
+	list-style: none;
+	float: left;
+	height: 24px;
+	width: 160px;
+	line-height: 24px;
+	border: 1px solid #ccc;
+	border-bottom: none;
+	background: #eee;
+	margin-left: 8px;
+	cursor: pointer;
+	border-radius: 5px 5px 0px 0px;
+}
+.tab li.selected {
+	height: 25px;
+	background: white;
+}
+.tab div {
+	border: 1px solid #ccc;
+	padding: 16px;
+	border-radius: 5px;
+}
+.hidden {
+	display: none;
+}
+.tab > div {
+	min-width: fit-content;
+}
+#material {
+	border-collapse: collapse;
+}
+#material input[type="number"] {
+	width: 100px;
+}
+#material [name="secretary"] {
+	width: 100px;
+}
+.item {
+	border-radius: 5px;
+	margin: 8px 4px;
+	padding: 2px 4px;
+	
+}
+select#lang {
+	width: 75px;
+}
+.success {
+	background: #C0FFC0;
+}
+.failtr {
+	background: #FFC0C0;
+}
+.fail {
+	background: #FFC0C0;
+	display: none;
+}

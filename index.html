@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="lang.js"></script>
+<script src="tabcontrol.js"></script>
+<script src="items.js"></script>
+<script src="develop.js"></script>
+<script src="simulator.js"></script>
+<meta http-equiv="Content-Type" content="charset=utf-8"/>
+<link href="style.css" rel="stylesheet"/>
+<title>KanColle Development Tools</title>
+</head>
+<body>
+<h2 class="i18n">KanColle Development Tools</h2>
+<h4 class="i18n">Development Simulator & Recipe Generator</h4>
+<div class="tab">
+<ul>
+<li class="selected i18n">Development Simulator</li>
+<li class="i18n">Recipe Generator</li>
+</ul>
+<div id="simulator">
+<table id="material" border="1px">
+<tr><td class="i18n">Secretary</td><td><select name="secretary">
+<option value="00" class="i18n">Torpedo Family</option>
+<option value="01" class="i18n">Gunboat Family</option>
+<option value="02" class="i18n">Carrier Family</option>
+<option value="10">Libeccio</option>
+<option value="11">Littorio(Italia)/Roma/Zara/Pola</option>
+</select name="hqlevel"></td><td class="i18n">HQ Level</td><td><select name="hqlevel">
+<option value="40" selected>40+</option>
+<option value="30">30~39</option>
+<option value="20">20~29</option>
+<option value="10">10~19</option>
+<option value="0">1~9</option>
+</select></td></tr>
+<tr><td class="i18n">Fuel</td><td class="i18n">Ammunition</td><td class="i18n">Steel</td><td class="i18n">Bauxite</td></tr>
+<tr><td><input type="number" min="10" max="300" value="10" name="fuel"/></td><td><input type="number" min="10" max="300" value="10" name="ammu"/></td><td><input type="number" min="10" max="300" value="10" name="steel"/></td><td><input type="number" min="10" max="300" value="10" name="baux"/></td></tr>
+</table>
+<br/><table id="result" border="1"></table>
+</div>
+<div class="hidden i18n">
+</div>
+</div>
+<hr/>
+<span>Languages: <select id="lang">
+<option value="zh">简体中文</option>
+<option value="en">English</option>
+<option value="ja">日本語</option>
+<option disabled title="Contect me!">Translator Wanted!</option>
+</select></span>
+<a href="https://github.com/DavidDiao/kc-development-tools" class="i18n">Project Homepage</a>
+<a href="https://github.com/DavidDiao/kc-development-tools/issues" class="i18n">Feedback</a>
+<a href="http://bbs.ngacn.cc/read.php?tid=12540754" class="i18n">Data Source(Chinese)</a>
+<br/>
+Email: <a href="mailto:daviddiaoyf@gmail">daviddiaoyf@gmail.com</a>
+</body>
+</html>
