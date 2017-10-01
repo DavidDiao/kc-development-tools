@@ -116,6 +116,7 @@ function develop(fuel, ammo, steel, baux, secretary, isitaly, hqlevel) {
 	while (table.children[1] != undefined) table.removeChild(table.children[1])
 	for (var i = 0; i < succ.length; ++i) table.appendChild(succ[i].toTRNode())
 	failtr.children[1].innerHTML = failprob + "%"
+	collapse.innerHTML = "[+]"
 	table.appendChild(failtr)
 	for (var i = 0; i < fail.length; ++i) table.appendChild(fail[i].toTRNode())
 }
