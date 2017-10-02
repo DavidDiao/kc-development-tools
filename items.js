@@ -150,7 +150,7 @@ function developResult(id, percentage, materials, hqlevel) {
 				}
 			}
 			if (items[id][3] * 10 > hqlevel) {
-				rtn += "\nRequire " + getString("HQ Level") + " >= " + (items[id][3] * 10)
+				title += "\nRequire " + getString("HQ Level") + " >= " + (items[id][3] * 10)
 			}
 			node.title = title.slice(1)
 		}
