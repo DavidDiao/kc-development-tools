@@ -4,8 +4,10 @@ var dict = { "KanColle Development Tools": "艦これ　装備開発ツール",
 "Development Simulator & Recipe Generator": "開発シミュレータ&複合レシピジェネレータ",
 "Development Simulator": "開発シミュレータ",
 "Recipe Generator": "複合レシピジェネレータ",
+"Probability Table": "確率一覧表",
 "Fuel": "燃料",
 "Ammunition": "弾薬",
+"Ammu": "弾薬",
 "Steel": "鋼材",
 "Bauxite": "ボーキ",
 "Secretary": "秘書艦",
@@ -16,9 +18,15 @@ var dict = { "KanColle Development Tools": "艦これ　装備開発ツール",
 "Name": "名称",
 "Percentage": "確率",
 "Failed": "失敗",
+"Internal": "内部の",
+"Rarity": "レア度",
+"(\\d{1,2}%) when (.*?) is available": "$2 が出る時の確率は $1",
+"Only available when\r?\nmaterial is greater than\r?\n([0-9\\/]*)": "材料使用量が\n$1\n以上の場合のみ",
+"Require Italian Flagship": "イタリア艦を秘書艦に\n任命する必要があります",
+"No records for Luigi Torelli and Aquila": "Luigi Torelli と Aquila に関する記録はありません",
 "Project Homepage": "ホームページへ",
 "Feedback": "フィードバック",
-"Data Source(Chinese)": "データのソース（中国語）" }
+"Data Source\\(Chinese\\)": "データのソース（中国語）" }
 
 var itemtypenames = [ "小口径主砲",
 "中口径主砲",
@@ -36,14 +44,6 @@ var itemtypenames = [ "小口径主砲",
 "レーダー",
 "ソナー & 爆雷",
 "機関部強化",
-"追加装甲",
+"増設バルジ",
 "陸上攻撃機",
 "簡易輸送部材" ]
-
-$(function(){
-	var $cs = $(".i18n")
-	for (var i = 0; i < $cs.length; ++i) {
-		var t = dict[$cs[i].textContent]
-		if (t != null) $cs[i].textContent = t
-	}
-})

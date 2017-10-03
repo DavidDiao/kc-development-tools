@@ -3,8 +3,10 @@ var dict = { "KanColle Development Tools": "舰队Collection 开发工具",
 "Development Simulator & Recipe Generator": "开发模拟器 & 复合公式生成器",
 "Development Simulator": "开发模拟器",
 "Recipe Generator": "复合公式生成器",
+"Probability Table": "概率一览表",
 "Fuel": "油",
 "Ammunition": "弹",
+"Ammu": "弹",
 "Steel": "钢",
 "Bauxite": "铝",
 "Secretary": "秘书舰",
@@ -15,9 +17,15 @@ var dict = { "KanColle Development Tools": "舰队Collection 开发工具",
 "Name": "名称",
 "Percentage": "概率",
 "Failed": "失败",
+"Internal": "内部",
+"Rarity": "稀有度",
+"(\\d{1,2}%) when (.*?) is available": "$2 加入列表时为 $1",
+"Only available when\r?\nmaterial is greater than\r?\n([0-9\\/]*)": "仅资源投入达到\n$1\n时加入列表",
+"Require Italian Flagship": "需要意舰旗舰",
+"No records for Luigi Torelli and Aquila": "Luigi Torelli、Aquila 无出货记录",
 "Project Homepage": "项目页面",
 "Feedback": "反馈",
-"Data Source(Chinese)": "数据来源" }
+"Data Source\\(Chinese\\)": "数据来源" }
 
 var itemtypenames = [ "小口径主炮",
 "中口径主炮",
@@ -38,11 +46,3 @@ var itemtypenames = [ "小口径主炮",
 "增设装甲板",
 "路基攻击机",
 "简易运输桶" ]
-
-$(function(){
-	var $cs = $(".i18n")
-	for (var i = 0; i < $cs.length; ++i) {
-		var t = dict[$cs[i].textContent]
-		if (t != null) $cs[i].textContent = t
-	}
-})

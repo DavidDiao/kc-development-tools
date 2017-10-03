@@ -25,7 +25,20 @@ h4 {
 	cursor: pointer;
 	border-radius: 5px 5px 0px 0px;
 }
-.tab li.selected {
+.tab > ul > a {
+	color: black;
+	text-decoration: none;
+	float: left;
+	height: 24px;
+	width: 160px;
+	line-height: 24px;
+	border: 1px solid #ccc;
+	border-bottom: none;
+	background: #eee;
+	margin-left: 8px;
+	border-radius: 5px 5px 0px 0px;
+}
+.tab li.selected, .tab a.selected {
 	height: 25px;
 	background: white;
 }
@@ -68,3 +81,37 @@ select#lang {
 	background: #FFC0C0;
 	display: none;
 }
+#probability {
+	border-collapse: collapse;
+	border: 2px solid;
+}
+#probability td, #probability th {
+	border: 1px solid;
+}
+#probability .lb {
+	border-left: 2px solid;
+}
+.notice {
+	color: red;
+	font-weight: bold;
+}
+
+.type0 { background: #D15B5B; }
+.type1 { background: #CC3D3D; }
+.type2 { background: #C22222; }
+.type3 { background: #FFEA00; }
+.type4 { background: #66CC77; }
+.type5 { background: #60BF73; }
+.type6 { background: #D15B5B; }
+.type7 { background: #5887AB; }
+.type8 { background: #66CC77; }
+.type9 { background: #65BCFF; }
+.type10 { background: #F36D6D; }
+.type11 { background: #FFEA00; }
+.type12 { background: #8FCC99; }
+.type13 { background: #E29734; }
+.type14 { background: #7ECCD8; }
+.type15 { background: #FFC44D; }
+.type16 { background: #997EAE; }
+.type17 { background: #66CC77; }
+.type18 { background: #A0A0A0; }

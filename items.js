@@ -18,26 +18,6 @@ var itemtypenames = [ "Small Caliber Main Gun",
 "Land-Based Attack Aircraft",
 "Supply Transport Container" ]
 
-var colors = [ "#D15B5B",
-"#CC3D3D",
-"#C22222",
-"#FFEA00",
-"#66CC77",
-"#60BF73",
-"#D15B5B",
-"#5887AB",
-"#66CC77",
-"#65BCFF",
-"#F36D6D",
-"#FFC000",
-"#8FCC99",
-"#E29734",
-"#7ECCD8",
-"#FFC44D",
-"#997EAE",
-"#66CC77",
-"#A0A0A0" ]
-
 // Id, Name, Rarity, Internal Rarity, Type, Break Materials[, is AA]
 var items = [
 	[1, "12cm単装砲", 1, 0, 0, [0, 1, 1, 0]],
@@ -155,7 +135,7 @@ function developResult(id, percentage, materials, hqlevel) {
 			node.title = title.slice(1)
 		}
 		var tdnode = document.createElement("td")
-		tdnode.style.color = items[id][6] ? colors[4] : colors[items[id][4]]
+		tdnode.className = "type" + (items[id][6] ? 4 : items[id][4])
 		tdnode.appendChild(document.createTextNode(items[id][1]))
 		node.appendChild(tdnode)
 		tdnode = document.createElement("td")
