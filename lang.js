@@ -12,10 +12,11 @@
 			for (var i = 0; i < $cs.length; ++i) $cs[i].innerText = getString($cs[i].innerText)
 			$cs = $(".notice")
 			for (var i = 0; i < $cs.length; ++i) $cs[i].title = getString($cs[i].title)
+			createList()
+			updateSim()
 		})
 	})
 	$(function(){
-		// $("#lang").find(`[value=${lang}]`)[0].selected = true
 		$("#lang").find("[value=" + lang + "]")[0].selected = true
 		$("#lang")[0].onchange = function() {
 			location.href = "?" + $("#lang")[0].selectedOptions[0].value + window.location.hash

@@ -18,7 +18,7 @@ h4 {
 	height: 24px;
 	width: 160px;
 	line-height: 24px;
-	border: 1px solid #ccc;
+	border: 1px solid #CCC;
 	border-bottom: none;
 	background: #eee;
 	margin-left: 8px;
@@ -32,7 +32,7 @@ h4 {
 	height: 24px;
 	width: 160px;
 	line-height: 24px;
-	border: 1px solid #ccc;
+	border: 1px solid #CCC;
 	border-bottom: none;
 	background: #eee;
 	margin-left: 8px;
@@ -42,13 +42,16 @@ h4 {
 	height: 25px;
 	background: white;
 }
-.tab div {
-	border: 1px solid #ccc;
+.tab > div {
+	border: 1px solid #CCC;
 	padding: 16px;
 	border-radius: 5px;
 }
 .hidden {
 	display: none;
+}
+.tab {
+	min-width: 520px;
 }
 .tab > div {
 	min-width: fit-content;
@@ -80,6 +83,66 @@ select#lang {
 .fail {
 	background: #FFC0C0;
 	display: none;
+}
+#gend {
+	font-size: 14px;
+}
+#gend > div > p {
+	margin: 8px 0px 8px 100px;
+	text-indent: -100px;
+}
+button {
+	margin: 2px;
+	border-radius: 5px;
+	cursor: pointer;
+	outline: none;
+}
+button:not(.selected) {
+	background: #DDD;
+	border: 2px outset;
+}
+.type {
+	font-weight: bold;
+}
+#results {
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	padding: 8px;
+}
+.resulth {
+	margin-top: 8px;
+	border: 1px solid #ccc;
+	border-radius: 5px 5px 0px 0px;
+	background: #eee;
+	padding: 8px;
+}
+.details {
+	font-weight: bold;
+	float: right;
+}
+.resultb {
+	margin-bottom: 8px;
+	border: 1px solid #ccc;
+	padding: 8px;
+	border-top: none;
+	border-radius: 0px 0px 5px 5px;
+}
+.resultb table {
+	border-collapse: collapse;
+	border: black;
+}
+.mat {
+	width: 80px;
+}
+.sort {
+	float: right;
+	cursor: pointer;
+	color: gray;
+}
+.sorting {
+	float: right;
+	cursor: pointer;
+	color: black;
 }
 #probability {
 	border-collapse: collapse;
@@ -115,3 +178,23 @@ select#lang {
 .type16 { background: #997EAE; }
 .type17 { background: #66CC77; }
 .type18 { background: #A0A0A0; }
+
+button.type0.selected { border: 2px inset #D15B5B; }
+button.type1.selected { border: 2px inset #CC3D3D; }
+button.type2.selected { border: 2px inset #C22222; }
+button.type3.selected { border: 2px inset #FFEA00; }
+button.type4.selected { border: 2px inset #66CC77; }
+button.type5.selected { border: 2px inset #60BF73; }
+button.type6.selected { border: 2px inset #D15B5B; }
+button.type7.selected { border: 2px inset #5887AB; }
+button.type8.selected { border: 2px inset #66CC77; }
+button.type9.selected { border: 2px inset #65BCFF; }
+button.type10.selected { border: 2px inset #F36D6D; }
+button.type11.selected { border: 2px inset #FFEA00; }
+button.type12.selected { border: 2px inset #8FCC99; }
+button.type13.selected { border: 2px inset #E29734; }
+button.type14.selected { border: 2px inset #7ECCD8; }
+button.type15.selected { border: 2px inset #FFC44D; }
+button.type16.selected { border: 2px inset #997EAE; }
+button.type17.selected { border: 2px inset #66CC77; }
+button.type18.selected { border: 2px inset #A0A0A0; }

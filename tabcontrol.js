@@ -6,7 +6,7 @@ $(function(){
 			if (i == this.index) $lis[i].classList.add("selected")
 			else $lis[i].classList.remove("selected")
 		}
-		var $divs = $ptab.find("div")
+		var $divs = $ptab.find("> div")
 		for (var i = 0; i < $divs.length; ++i) {
 			if (i == this.index) $divs[i].classList.remove("hidden")
 			else $divs[i].classList.add("hidden")
@@ -24,7 +24,7 @@ $(function(){
 		}
 		if (hash != "") {
 			hash += "d"
-			var $divs = $(tab).find("div")
+			var $divs = $(tab).find("> div")
 			for (var j = 0; j < $divs.length; ++j) {
 				if ($divs[j].id == hash) {
 					for (var k = 0; k < $lis.length; ++k) $lis[k].classList.remove("selected")

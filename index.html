@@ -7,7 +7,9 @@
 <script src="items.js"></script>
 <script src="develop.js"></script>
 <script src="simulator.js"></script>
+<script src="generator.js"></script>
 <meta http-equiv="Content-Type" content="charset=utf-8"/>
+<meta content="width=800" name="viewport">
 <link href="style.css" rel="stylesheet"/>
 <title>KanColle Development Tools</title>
 </head>
@@ -22,7 +24,9 @@
 </ul>
 <div id="simd">
 <table id="material" border="1px">
-<tr><td class="i18n">Secretary</td><td><select name="secretary">
+<tr><td><span class="i18n">Secretary</span><span class="notice" title="Torpedo Family: 海防艦、駆逐艦、軽巡洋艦、重雷装巡洋艦、練習巡洋艦、潜水艦、補給艦
+Gunboat Family: 重巡洋艦、戦艦、工作艦
+Carrier Family: 航空巡洋艦、航空戦艦、軽空母、正規空母、装甲空母、潜水空母、水上機母艦、揚陸艦、潜水母艦">*</span></td><td><select name="secretary">
 <option value="00" class="i18n">Torpedo Family</option>
 <option value="01" class="i18n">Gunboat Family</option>
 <option value="02" class="i18n">Carrier Family</option>
@@ -33,7 +37,7 @@
 <option value="30">30~39</option>
 <option value="20">20~29</option>
 <option value="10">10~19</option>
-<option value="0">1~9</option>
+<option value="1">1~9</option>
 </select></td></tr>
 <tr><td class="i18n">Fuel</td><td class="i18n">Ammunition</td><td class="i18n">Steel</td><td class="i18n">Bauxite</td></tr>
 <tr><td><input type="number" min="10" max="300" value="10" name="fuel"/></td><td><input type="number" min="10" max="300" value="10" name="ammu"/></td><td><input type="number" min="10" max="300" value="10" name="steel"/></td><td><input type="number" min="10" max="300" value="10" name="baux"/></td></tr>
@@ -41,10 +45,19 @@
 <br/><table id="result" border="1"></table>
 </div>
 <div class="hidden" id="gend">
+<div></div>
+<span class="i18n">HQ Level</span>: <select name="hqlevel_">
+<option value="40" selected>40+</option>
+<option value="30">30~39</option>
+<option value="20">20~29</option>
+<option value="10">10~19</option>
+<option value="1">1~9</option>
+</select> <span class="i18n">Min HQ Level: </span><span id="minhq">1</span><br/><br/>
+<div id="results" class="i18n">No Result</div>
 </div>
 <div class="hidden" id="tabled">
 <table id="probability">
-<tr><th rowspan="2">ID</th><th class="i18n" rowspan="2">Name</th><th class="i18n" rowspan="2">Rarity</th><th rowspan="2"><span class="i18n">Internal<br/>Rarity</span><span class="notice" title="Require HQ Level >= Internal Rarity * 10">*</span></th><th class="i18n lb" colspan="3">Torpedo Family</th><th class="i18n lb" colspan="3">Gunboat Family</th><th class="i18n lb" colspan="3">Carrier Family</th></tr>
+<tr><th rowspan="2">ID</th><th class="i18n" rowspan="2">Name</th><th class="i18n" rowspan="2">Rarity</th><th rowspan="2"><span class="i18n">Internal<br/>Rarity</span><span class="notice" title="Require HQ Level ≥ Internal Rarity * 10">*</span></th><th class="i18n lb" colspan="3">Torpedo Family</th><th class="i18n lb" colspan="3">Gunboat Family</th><th class="i18n lb" colspan="3">Carrier Family</th></tr>
 <tr><th class="lb"><span class="i18n">Fuel</span><span class="i18n">Steel</span></th><th><span class="i18n">Ammu</span></th><th><span class="i18n">Bauxite</span></th><th class="lb"><span class="i18n">Fuel</span><span class="i18n">Steel</span></th><th><span class="i18n">Ammu</span></th><th><span class="i18n">Bauxite</span></th><th class="lb"	><span class="i18n">Fuel</span><span class="i18n">Steel</span></th><th><span class="i18n">Ammu</span></th><th><span class="i18n">Bauxite</span></th></tr>
 <tr class="type0"><td>1</td><td>12cm単装砲</td><td>1</td><td>0</td><td class="lb">6%</td><td>2%</td><td>2%</td><td class="lb">4%</td><td>0%</td><td>0%</td><td class="lb">2%</td><td>2%</td><td>0%</td></tr>
 <tr class="type0"><td>2</td><td>12.7cm連装砲</td><td>1</td><td>0</td><td class="lb">10%</td><td>4%</td><td>2%</td><td class="lb">2%</td><td>0%</td><td>0%</td><td class="lb">2%</td><td>2%</td><td>0%</td></tr>

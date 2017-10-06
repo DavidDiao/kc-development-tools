@@ -97,42 +97,21 @@ function developResult(id, percentage, materials, hqlevel) {
 	}
 	if (items[id][3] * 10 > hqlevel) this.successful = false
 
-	this.toTRHTML = function() {
-		var rtn = "<tr class=\""
-		if (this.successful) rtn += "success"
-		else {
-			rtn += "fail\" title=\""
-			var t = false
-			for (var i = 0; i < 4; ++i) {
-				if (items[id][5][i] * 10 > materials[i]) {
-					if (t) rtn += '\n'
-					rtn += "Require " + getString(materialNames[i]) + " >= " + (items[id][5][i] * 10)
-					t = true
-				}
-			}
-			if (items[id][3] * 10 > hqlevel) {
-				if (t) rtn += '\n'
-				rtn += "Require " + getString("HQ Level") + " >= " + (items[id][3] * 10)
-			}
-		}
-		return rtn + "\"><td style=\"color: " + (items[id][6] ? colors[4] : colors[items[id][4]]) + "\">" + items[id][1] + "</td><td>" + percentage + "%</td></tr>"
-	}
-
 	this.toTRNode = function() {
 		var node = document.createElement("tr")
 		if (this.successful) node.className = "success"
 		else {
 			node.className = "fail"
-			var title = ""
+			var title = "Require"
 			for (var i = 0; i < 4; ++i) {
 				if (items[id][5][i] * 10 > materials[i]) {
-					title += "\nRequire " + getString(materialNames[i]) + " >= " + (items[id][5][i] * 10)
+					title += "\n" + getString(materialNames[i]) + " ≥ " + (items[id][5][i] * 10)
 				}
 			}
 			if (items[id][3] * 10 > hqlevel) {
-				title += "\nRequire " + getString("HQ Level") + " >= " + (items[id][3] * 10)
+				title += "\n" + getString("HQ Level") + " ≥ " + (items[id][3] * 10)
 			}
-			node.title = title.slice(1)
+			node.title = getString(title)
 		}
 		var tdnode = document.createElement("td")
 		tdnode.className = "type" + (items[id][6] ? 4 : items[id][4])
