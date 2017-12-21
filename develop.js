@@ -66,8 +66,8 @@ function develop(fuel, ammo, steel, baux, secretary, isitaly, hqlevel) {
 	}
 	if (isitaly && (layer == 3)) {
 		for (var i = 0; i < list.length; ++i) {
-			if (items[list[i][0]][0] == 41) list[i][1] -= 2
-			if ((items[list[i][0]][0] == 28) && (secretary == 1)) list[i][1] -= 2
+			if (items[list[i][0]][0] == 25) list[i][1] -= 2
+			if ((items[list[i][0]][0] == 22) && (secretary == 1)) list[i][1] -= 2
 			if (list[i][1] <= 0) {
 				list.splice(i, 1)
 				--i
