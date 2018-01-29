@@ -158,11 +158,11 @@ function display() {
 		tbody.appendChild(tr)
 		tr = document.createElement("tr")
 		td = document.createElement("td")
-		td.appendChild(document.createTextNode(getString("Develop")))
+		td.appendChild(document.createTextNode(getString("Failed")))
 		td.className = "i18n"
 		tr.appendChild(td)
 		td = document.createElement("td")
-		td.appendChild(document.createTextNode((100 - results[i].fail) + "%"))
+		td.appendChild(document.createTextNode((results[i].fail) + "%"))
 		tr.appendChild(td)
 		for (var j = 0; j < 5; ++j) {
 			td = document.createElement("td")
