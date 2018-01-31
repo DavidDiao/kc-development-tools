@@ -1,7 +1,7 @@
 $(function(){
 	function select() {
 		var $ptab = $(this.parentElement.parentElement)
-		var $lis = $ptab.find("li,a")
+		var $lis = $ptab.find("ul li,ul a")
 		for (var i = 0; i < $lis.length; ++i) {
 			if (i == this.index) $lis[i].classList.add("selected")
 			else $lis[i].classList.remove("selected")
@@ -17,7 +17,7 @@ $(function(){
 	for (var i = 0; i < $tabs.length; ++i) {
 		var tab = $tabs[i]
 		var $tab = $(tab)
-		var $lis = $tab.find("li,a")
+		var $lis = $tab.find("ul li,ul a")
 		for (var j = 0; j < $lis.length; ++j) {
 			$lis[j].index = j
 			$lis[j].onclick = select

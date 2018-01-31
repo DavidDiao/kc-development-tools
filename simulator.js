@@ -15,7 +15,7 @@ var collapse = document.createElement("a")
 	failtr.className = "failtr"
 	tnode = document.createElement("td")
 	var tnode2 = document.createElement("span")
-	tnode2.innerHTML = "Failed"
+	tnode2.innerHTML = getString("Failed")
 	tnode2.className = "i18n"
 	tnode.appendChild(tnode2)
 	tnode.appendChild(document.createTextNode(" "))
