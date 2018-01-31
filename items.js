@@ -1,4 +1,5 @@
-var itemtypenames = [ "Small Caliber Main Gun",
+var itemtypenames
+if (itemtypenames == undefined) itemtypenames = [ "Small Caliber Main Gun",
 "Medium Caliber Main Gun",
 "Large Caliber Main Gun",
 "Secondary Gun",

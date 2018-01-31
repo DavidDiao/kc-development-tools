@@ -1,4 +1,3 @@
-dict = undefined;
 (function(){
 	var lang = window.location.search.substr(1)
 	if (["en","zh","ja"].indexOf(lang) < 0) {
@@ -142,6 +141,7 @@ itemtypenames = [ "小口径主砲",
 		}
 	})
 }())
+var dict
 function getString(src) {
 	if (dict == undefined) return src
 	for (var name in dict) {
