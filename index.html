@@ -8,6 +8,7 @@
 <script src="develop.js"></script>
 <script src="simulator.js"></script>
 <script src="generator.js"></script>
+<script src="notify.js"></script>
 <meta http-equiv="Content-Type" content="charset=utf-8"/>
 <meta content="width=800" name="viewport">
 <link href="style.css" rel="stylesheet"/>
@@ -24,9 +25,9 @@
 </ul>
 <div id="simd">
 <table id="material" border="1px">
-<tr><td><span class="i18n">Secretary</span><span class="notice" title="Torpedo Family: 海防艦、駆逐艦、軽巡洋艦、重雷装巡洋艦、練習巡洋艦、潜水艦、補給艦
+<tr><td><span class="i18n">Secretary</span><a href="javascript:void(0);" class="notice" title="Torpedo Family: 海防艦、駆逐艦、軽巡洋艦、重雷装巡洋艦、練習巡洋艦、潜水艦、補給艦
 Gunboat Family: 重巡洋艦、戦艦、工作艦
-Carrier Family: 航空巡洋艦、航空戦艦、軽空母、正規空母、装甲空母、潜水空母、水上機母艦、揚陸艦、潜水母艦">*</span></td><td><select name="secretary">
+Carrier Family: 航空巡洋艦、航空戦艦、軽空母、正規空母、装甲空母、潜水空母、水上機母艦、揚陸艦、潜水母艦">*</a></td><td><select name="secretary">
 <option value="00" class="i18n">Torpedo Family</option>
 <option value="01" class="i18n">Gunboat Family</option>
 <option value="02" class="i18n">Carrier Family</option>
@@ -57,7 +58,7 @@ Carrier Family: 航空巡洋艦、航空戦艦、軽空母、正規空母、装�
 </div>
 <div class="hidden" id="tabled">
 <table id="probability">
-<tr><th rowspan="2">ID</th><th class="i18n" rowspan="2">Name</th><th class="i18n" rowspan="2">Rarity</th><th rowspan="2"><span class="i18n">Internal<br/>Rarity</span><span class="notice" title="Require HQ Level ≥ Internal Rarity * 10">*</span></th><th class="i18n lb" colspan="3">Torpedo Family</th><th class="i18n lb" colspan="3">Gunboat Family</th><th class="i18n lb" colspan="3">Carrier Family</th></tr>
+<tr><th rowspan="2">ID</th><th class="i18n" rowspan="2">Name</th><th class="i18n" rowspan="2">Rarity</th><th rowspan="2"><span class="i18n">Internal<br/>Rarity</span><a href="javascript:void(0);" class="notice" title="Require HQ Level ≥ Internal Rarity * 10">*</a></th><th class="i18n lb" colspan="3">Torpedo Family</th><th class="i18n lb" colspan="3">Gunboat Family</th><th class="i18n lb" colspan="3">Carrier Family</th></tr>
 <tr><th class="lb"><span class="i18n">Fuel</span><span class="i18n">Steel</span></th><th><span class="i18n">Ammu</span></th><th><span class="i18n">Bauxite</span></th><th class="lb"><span class="i18n">Fuel</span><span class="i18n">Steel</span></th><th><span class="i18n">Ammu</span></th><th><span class="i18n">Bauxite</span></th><th class="lb"	><span class="i18n">Fuel</span><span class="i18n">Steel</span></th><th><span class="i18n">Ammu</span></th><th><span class="i18n">Bauxite</span></th></tr>
 <tr class="type0"><td>1</td><td>12cm単装砲</td><td>1</td><td>0</td><td class="lb">6%</td><td>2%</td><td>2%</td><td class="lb">4%</td><td>0%</td><td>0%</td><td class="lb">2%</td><td>2%</td><td>0%</td></tr>
 <tr class="type0"><td>2</td><td>12.7cm連装砲</td><td>1</td><td>0</td><td class="lb">10%</td><td>4%</td><td>2%</td><td class="lb">2%</td><td>0%</td><td>0%</td><td class="lb">2%</td><td>2%</td><td>0%</td></tr>
@@ -86,24 +87,24 @@ Carrier Family: 航空巡洋艦、航空戦艦、軽空母、正規空母、装�
 <tr class="type7"><td>41</td><td>甲標的</td><td>1</td><td>1</td><td class="lb">0%</td><td>2%</td><td>2%</td><td class="lb">0%</td><td>2%</td><td>2%</td><td class="lb">6%</td><td>2%</td><td>0%</td></tr>
 <tr class="type8"><td>19</td><td>九六式艦戦</td><td>1</td><td>0</td><td class="lb">2%</td><td>0%</td><td>4%</td><td class="lb">0%</td><td>0%</td><td>4%</td><td class="lb">4%</td><td>0%</td><td>4%</td></tr>
 <tr class="type8"><td>20</td><td>零式艦戦21型</td><td>1</td><td>0</td><td class="lb">2%</td><td>0%</td><td>4%</td><td class="lb">0%</td><td>0%</td><td>6%</td><td class="lb">6%</td><td>2%</td><td>10%</td></tr>
-<tr class="type8"><td>21</td><td>零式艦戦52型</td><td>2</td><td>1</td><td class="lb">0%</td><td>0%</td><td>2%</td><td class="lb">0%</td><td>0%</td><td>4%</td><td class="lb">4%</td><td>2%<span class="notice" title="0% when 九六式陸攻 is available">*</span></td><td>8%<span class="notice" title="6% when 九六式陸攻 is available">*</span></td></tr>
-<tr class="type8"><td>22</td><td>烈風</td><td>3</td><td>3</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">0%</td><td>0%</td><td>2%<span class="notice" title="0% when Ro.43水偵 is available">*</span></td><td class="lb">0%</td><td>0%</td><td>2%</td></tr>
+<tr class="type8"><td>21</td><td>零式艦戦52型</td><td>2</td><td>1</td><td class="lb">0%</td><td>0%</td><td>2%</td><td class="lb">0%</td><td>0%</td><td>4%</td><td class="lb">4%</td><td>2%<a href="javascript:void(0);" class="notice" title="0% when 九六式陸攻 is available">*</a></td><td>8%<a href="javascript:void(0);" class="notice" title="6% when 九六式陸攻 is available">*</a></td></tr>
+<tr class="type8"><td>22</td><td>烈風</td><td>3</td><td>3</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">0%</td><td>0%</td><td>2%<a href="javascript:void(0);" class="notice" title="0% when Ro.43水偵 is available">*</a></td><td class="lb">0%</td><td>0%</td><td>2%</td></tr>
 <tr class="type8"><td>55</td><td>紫電改二</td><td>3</td><td>2</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">0%</td><td>0%</td><td>2%</td></tr>
 <tr class="type8"><td>181</td><td>零式艦戦32型</td><td>2</td><td>3</td><td class="lb">0%</td><td>0%</td><td>2%</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">2%</td><td>0%</td><td>2%</td></tr>
 <tr class="type9"><td>16</td><td>九七式艦攻</td><td>1</td><td>0</td><td class="lb">2%</td><td>4%</td><td>6%</td><td class="lb">0%</td><td>2%</td><td>4%</td><td class="lb">0%</td><td>6%</td><td>6%</td></tr>
 <tr class="type9"><td>17</td><td>天山</td><td>2</td><td>1</td><td class="lb">0%</td><td>2%</td><td>2%</td><td class="lb">0%</td><td>2%</td><td>4%</td><td class="lb">0%</td><td>10%</td><td>10%</td></tr>
 <tr class="type9"><td>18</td><td>流星</td><td>3</td><td>2</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">0%</td><td>0%</td><td>2%</td><td class="lb">0%</td><td>4%</td><td>4%</td></tr>
 <tr class="type9"><td>52</td><td>流星改</td><td>3</td><td>3</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">0%</td><td>2%</td><td>2%</td></tr>
-<tr class="type10"><td>23</td><td>九九式艦爆</td><td>1</td><td>0</td><td class="lb">2%</td><td>4%</td><td>4%</td><td class="lb">0%</td><td>2%</td><td>6%</td><td class="lb">0%</td><td>8%<span class="notice" title="6% when 九六式陸攻 is available">*</span></td><td>10%<span class="notice" title="8% when 九六式陸攻 is available">*</span></td></tr>
-<tr class="type10"><td>24</td><td>彗星</td><td>2</td><td>1</td><td class="lb">0%</td><td>2%</td><td>4%</td><td class="lb">0%</td><td>2%</td><td>2%</td><td class="lb">0%</td><td>6%<span class="notice" title="4% when 九六式陸攻 is available">*</span></td><td>6%<span class="notice" title="4% when 九六式陸攻 is available">*</span></td></tr>
+<tr class="type10"><td>23</td><td>九九式艦爆</td><td>1</td><td>0</td><td class="lb">2%</td><td>4%</td><td>4%</td><td class="lb">0%</td><td>2%</td><td>6%</td><td class="lb">0%</td><td>8%<a href="javascript:void(0);" class="notice" title="6% when 九六式陸攻 is available">*</a></td><td>10%<a href="javascript:void(0);" class="notice" title="8% when 九六式陸攻 is available">*</a></td></tr>
+<tr class="type10"><td>24</td><td>彗星</td><td>2</td><td>1</td><td class="lb">0%</td><td>2%</td><td>4%</td><td class="lb">0%</td><td>2%</td><td>2%</td><td class="lb">0%</td><td>6%<a href="javascript:void(0);" class="notice" title="4% when 九六式陸攻 is available">*</a></td><td>6%<a href="javascript:void(0);" class="notice" title="4% when 九六式陸攻 is available">*</a></td></tr>
 <tr class="type10"><td>57</td><td>彗星一二型甲</td><td>3</td><td>2</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">0%</td><td>2%</td><td>2%</td></tr>
 <tr class="type10"><td>60</td><td>零式艦戦62型(爆戦)</td><td>3</td><td>2</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">0%</td><td>2%</td><td>2%</td></tr>
 <tr class="type11"><td>54</td><td>彩雲</td><td>3</td><td>2</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">0%</td><td>0%</td><td>4%</td></tr>
 <tr class="type11"><td>61</td><td>二式艦上偵察機</td><td>2</td><td>1</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">0%</td><td>0%</td><td>2%</td></tr>
-<tr class="type12"><td>25</td><td>零式水上偵察機</td><td>1</td><td>1</td><td class="lb">2%</td><td>0%</td><td>10%<span class="notice" title="8% when Ro.43水偵 is available">*</span></td><td class="lb">2%</td><td>0%</td><td>6%<span class="notice" title="4% when Ro.43水偵 is available">*</span></td><td class="lb">12%</td><td>12%<span class="notice" title="10% when 九六式陸攻 is available">*</span></td><td>8%<span class="notice" title="6% when 九六式陸攻 is available">*</span></td></tr>
+<tr class="type12"><td>25</td><td>零式水上偵察機</td><td>1</td><td>1</td><td class="lb">2%</td><td>0%</td><td>10%<a href="javascript:void(0);" class="notice" title="8% when Ro.43水偵 is available">*</a></td><td class="lb">2%</td><td>0%</td><td>6%<a href="javascript:void(0);" class="notice" title="4% when Ro.43水偵 is available">*</a></td><td class="lb">12%</td><td>12%<a href="javascript:void(0);" class="notice" title="10% when 九六式陸攻 is available">*</a></td><td>8%<a href="javascript:void(0);" class="notice" title="6% when 九六式陸攻 is available">*</a></td></tr>
 <tr class="type12"><td>26</td><td>瑞雲</td><td>2</td><td>1</td><td class="lb">0%</td><td>0%</td><td>4%</td><td class="lb">0%</td><td>0%</td><td>4%</td><td class="lb">4%</td><td>8%</td><td>6%</td></tr>
 <tr class="type12"><td>59</td><td>零式水上観測機</td><td>2</td><td>1</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">0%</td><td>0%</td><td>0%</td><td class="lb">2%</td><td>0%</td><td>0%</td></tr>
-<tr class="type12"><td>163</td><td>Ro.43水偵<br/><b><span class="i18n">Require Italian Flagship</span><span class="notice" title="No records for Luigi Torelli and Aquila">*</span></b></td><td>3</td><td>3</td><td class="lb">0%</td><td>0%</td><td>2%</td><td class="lb">0%</td><td>0%</td><td>4%</td><td class="lb">0%?</td><td>0%?</td><td>?</td></tr>
+<tr class="type12"><td>163</td><td>Ro.43水偵<br/><b><span class="i18n">Require Italian Flagship</span><a href="javascript:void(0);" class="notice" title="No records for Luigi Torelli and Aquila">*</a></b></td><td>3</td><td>3</td><td class="lb">0%</td><td>0%</td><td>2%</td><td class="lb">0%</td><td>0%</td><td>4%</td><td class="lb">0%?</td><td>0%?</td><td>?</td></tr>
 <tr class="type13"><td>27</td><td>13号対空電探</td><td>2</td><td>1</td><td class="lb">4%</td><td>2%</td><td>2%</td><td class="lb">2%</td><td>0%</td><td>0%</td><td class="lb">2%</td><td>0%</td><td>2%</td></tr>
 <tr class="type13"><td>28</td><td>22号対水上電探</td><td>2</td><td>1</td><td class="lb">2%</td><td>2%</td><td>2%</td><td class="lb">0%</td><td>2%</td><td>2%</td><td class="lb">2%</td><td>0%</td><td>0%</td></tr>
 <tr class="type13"><td>29</td><td>33号対水上電探</td><td>3</td><td>2</td><td class="lb">2%</td><td>2%</td><td>2%</td><td class="lb">2%</td><td>2%</td><td>2%</td><td class="lb">2%</td><td>0%</td><td>0%</td></tr>
