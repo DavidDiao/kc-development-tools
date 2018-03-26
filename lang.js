@@ -145,8 +145,6 @@ itemtypenames = [ "小口径主砲",
 		for (var i = 0; i < $cs.length; ++i) $cs[i].innerText = getString($cs[i].innerText)
 		$cs = $(".notice")
 		for (var i = 0; i < $cs.length; ++i) $cs[i].title = getString($cs[i].title)
-		createList()
-		updateSim()
 
 		$("#lang").find("[value=" + lang + "]")[0].selected = true
 		$("#lang")[0].onchange = function() {
