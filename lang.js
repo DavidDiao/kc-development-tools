@@ -4,7 +4,20 @@
 		lang = navigator.browserLanguage ? navigator.browserLanguage : navigator.language
 		if (lang.indexOf("zh") >= 0) lang = "zh"
 		else if (lang.indexOf("ja") >= 0) lang = "ja"
-		else lang = "en"
+		else if (navigator.languages != undefined) { 
+			for (var i = 0; i < navigator.languages.length; ++i) {
+				if (navigator.languages[i].indexOf("zh") >= 0) {
+					lang = "zh"
+					break
+				}
+				if (navigator.languages[i].indexOf("ja") >= 0) {
+					lang = "ja"
+					break
+				}
+				if (navigator.languages[i].indexOf("en") >= 0) break
+			}
+			if ((lang != "zh") && (lang != "ja")) lang = "en"
+		}
 	}
 	if (lang == "zh") {
 document.title = "舰队Collection 开发工具"
