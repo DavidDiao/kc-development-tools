@@ -1,11 +1,16 @@
 (function(){
 	var lang = window.location.search.substr(1)
-	if (["en","zh","ja"].indexOf(lang) < 0) {
-		lang = navigator.browserLanguage ? navigator.browserLanguage : navigator.language
-		if (lang.indexOf("zh") >= 0) lang = "zh"
+	if (["en","zh","zh-tw","ja"].indexOf(lang) < 0) {
+		lang = (navigator.browserLanguage ? navigator.browserLanguage : navigator.language).toLowerCase()
+		if (lang.indexOf("zh-tw") >= 0) lang = "zh-tw"
+		else if (lang.indexOf("zh") >= 0) lang = "zh"
 		else if (lang.indexOf("ja") >= 0) lang = "ja"
 		else if (navigator.languages != undefined) { 
 			for (var i = 0; i < navigator.languages.length; ++i) {
+				if (navigator.languages[i].toLowerCase().indexOf("zh-tw") >= 0) {
+					lang = "zh-tw"
+					break
+				}
 				if (navigator.languages[i].indexOf("zh") >= 0) {
 					lang = "zh"
 					break
@@ -21,6 +26,7 @@
 	}
 	if (lang == "zh") {
 document.title = "舰队Collection 开发工具"
+$(function(){document.body.lang = "zh"})
 dict = { "KanColle Development Tools": "舰队Collection 开发工具",
 "Development Simulator & Recipe Generator": "开发模拟器 & 复合公式生成器",
 "Development Simulator": "开发模拟器",
@@ -76,8 +82,68 @@ itemtypenames = [ "小口径主炮",
 "对潜装备",
 "引擎",
 "增设装甲板",
-"路基攻击机",
+"陆基攻击机",
 "简易运输桶" ]
+	} else if (lang == "zh-tw") {
+document.title = "艦隊Collection 開發工具"
+$(function(){document.body.lang = "zh-tw"})
+dict = { "KanColle Development Tools": "艦隊Collection 開發工具",
+"Development Simulator & Recipe Generator": "開發模擬器 & 複合公式生成器",
+"Development Simulator": "開發模擬器",
+"Recipe Generator": "複合公式生成器",
+"Probability Table": "概率一覽表",
+"Fuel": "油",
+"Ammunition": "彈",
+"Ammu": "彈",
+"Steel": "鋼",
+"Bauxite": "鋁",
+"Dev. Mat.": "開發資材",
+"Secretary": "秘書艦",
+"HQ Level": "提督等級",
+"Torpedo Family": "水雷系",
+"Gunboat Family": "炮艦系",
+"Carrier Family": "航母系",
+"Require": "需要",
+"Min ": "最低",
+"No Result": "無結果",
+"Details": "詳細",
+"Expected Resource Consumption": "期望出貨消耗",
+"Get Target": "出貨",
+"Develop": "開發",
+"Success Rate": "成功率",
+"Failure Rate": "失敗率",
+"Name": "名稱",
+"Percentage": "概率",
+"Failed": "失敗",
+"Internal": "内部",
+"Rarity": "稀有度",
+"(\\d{1,2}%) when (.*?) is available": "$2 加入列表時為 $1",
+"Only available when\r?\nmaterial is greater than\r?\n([0-9\\/]*)": "僅資源投入達到\n$1\n時加入列表",
+" ?Italian Flagship": "意艦旗艦",
+"No records for Luigi Torelli and Aquila": "Luigi Torelli、Aquila 無出貨記錄",
+"Project Homepage": "項目頁面",
+"Feedback": "反饋",
+"Data Source\\(Chinese\\)": "數據來源" }
+
+itemtypenames = [ "小口徑主砲",
+"中口徑主砲",
+"大口徑主砲",
+"副砲",
+"機槍",
+"對空強化彈",
+"穿甲彈",
+"魚雷 & 微型潛艇",
+"艦載戰鬥機",
+"艦載魚雷機",
+"艦載轟炸機",
+"艦載偵查機",
+"水上機",
+"電探",
+"對潛裝備",
+"引擎",
+"增設裝甲板",
+"陸基攻擊機",
+"簡易運輸桶" ]
 	} else if (lang == "ja") {
 document.title = "艦これ　装備開発ツール"
 $(function(){document.body.lang = "ja"})
@@ -139,7 +205,7 @@ itemtypenames = [ "小口径主砲",
 "増設バルジ",
 "陸上攻撃機",
 "簡易輸送部材" ]
-	}
+	} else $(function(){document.body.lang = "en"})
 	$(function(){
 		var $cs = $(".i18n")
 		for (var i = 0; i < $cs.length; ++i) $cs[i].innerText = getString($cs[i].innerText)
