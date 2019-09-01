@@ -58,7 +58,7 @@ dict = { "KanColle Development Tools": "舰队Collection 开发工具",
 "Internal": "内部",
 "Rarity": "稀有度",
 "(\\d{1,2}%) when (.*?) is available": "$2 加入列表时为 $1",
-"Only available when\r?\nmaterial is greater than\r?\n([0-9\\/]*)": "仅资源投入达到\n$1\n时加入列表",
+"Only available when<br ?/?>material is greater than<br ?/?>([0-9\\/]*)": "仅资源投入达到\n$1\n时加入列表",
 " ?Italian Flagship": "意舰旗舰",
 "No records for Luigi Torelli and Aquila": "Luigi Torelli、Aquila 无出货记录",
 "Project Homepage": "项目页面",
@@ -118,7 +118,7 @@ dict = { "KanColle Development Tools": "艦隊Collection 開發工具",
 "Internal": "内部",
 "Rarity": "稀有度",
 "(\\d{1,2}%) when (.*?) is available": "$2 加入列表時為 $1",
-"Only available when\r?\nmaterial is greater than\r?\n([0-9\\/]*)": "僅資源投入達到\n$1\n時加入列表",
+"Only available when<br ?/?>material is greater than<br ?/?>([0-9\\/]*)": "僅資源投入達到\n$1\n時加入列表",
 " ?Italian Flagship": "意艦旗艦",
 "No records for Luigi Torelli and Aquila": "Luigi Torelli、Aquila 無出貨記錄",
 "Project Homepage": "項目頁面",
@@ -177,9 +177,9 @@ dict = { "KanColle Development Tools": "艦これ　装備開発ツール",
 "Internal": "内部の",
 "Rarity": "レア度",
 "(\\d{1,2}%) when (.*?) is available": "$2 が出る時の確率は $1",
-"Only available when\r?\nmaterial is greater than\r?\n([0-9\\/]*)": "材料使用量が\n$1\n以上の場合のみ",
+"Only available when<br ?/?>material is greater than<br ?/?>([0-9\\/]*)": "材料使用量が\n$1\n以上の場合のみ",
 "Require Italian Flagship": "イタリア艦を秘書艦に\n任命する必要があります",
-"Require(\\r?\\n| )([\\w\\W]*)": "$2$1を必要とする",
+"Require(<br ?/?>| )([\\w\\W]*)": "$2$1を必要とする",
 "Italian Flagship": "イタリア艦を秘書艦に任命する",
 "No records for Luigi Torelli and Aquila": "Luigi Torelli と Aquila に関する記録はありません",
 "Project Homepage": "ホームページへ",
@@ -206,9 +206,9 @@ itemtypenames = [ "小口径主砲",
 "陸上攻撃機",
 "簡易輸送部材" ]
 	} else $(function(){document.body.lang = "en"})
-	$(function(){
+	document.addEventListener('DOMContentLoaded', function() {
 		var $cs = $(".i18n")
-		for (var i = 0; i < $cs.length; ++i) $cs[i].innerText = getString($cs[i].innerText)
+		for (var i = 0; i < $cs.length; ++i) $cs[i].innerHTML = getString($cs[i].innerHTML)
 		$cs = $(".notice")
 		for (var i = 0; i < $cs.length; ++i) $cs[i].title = getString($cs[i].title)
 
