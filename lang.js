@@ -63,7 +63,8 @@ dict = { "KanColle Development Tools": "舰队Collection 开发工具",
 "No records for Luigi Torelli and Aquila": "Luigi Torelli、Aquila 无出货记录",
 "Project Homepage": "项目页面",
 "Feedback": "反馈",
-"Data Source\\(Chinese\\)": "数据来源" }
+"Data Source\\(Chinese\\)": "数据来源",
+'The original author has stopped maintenance\\.<br ?/?>It is recommended to use the version maintained by SkywalkerJi: <a href="https://御坂美琴\\.cn/kc-development-tools/">https://御坂美琴\\.cn/kc-development-tools/</a>': '原作者已停止维护。<br>建议使用SkywalkerJi维护的版本：<a href="https://御坂美琴.cn/kc-development-tools/">https://御坂美琴.cn/kc-development-tools/</a>' }
 
 itemtypenames = [ "小口径主炮",
 "中口径主炮",
@@ -123,7 +124,8 @@ dict = { "KanColle Development Tools": "艦隊Collection 開發工具",
 "No records for Luigi Torelli and Aquila": "Luigi Torelli、Aquila 無出貨記錄",
 "Project Homepage": "項目頁面",
 "Feedback": "反饋",
-"Data Source\\(Chinese\\)": "數據來源" }
+"Data Source\\(Chinese\\)": "數據來源",
+'The original author has stopped maintenance\\.<br ?/?>It is recommended to use the version maintained by SkywalkerJi: <a href="https://御坂美琴\\.cn/kc-development-tools/">https://御坂美琴\\.cn/kc-development-tools/</a>': '原作者已停止維護。<br>建議使用SkywalkerJi維護的版本：<a href="https://御坂美琴.cn/kc-development-tools/">https://御坂美琴.cn/kc-development-tools/</a>' }
 
 itemtypenames = [ "小口徑主砲",
 "中口徑主砲",
@@ -184,7 +186,8 @@ dict = { "KanColle Development Tools": "艦これ　装備開発ツール",
 "No records for Luigi Torelli and Aquila": "Luigi Torelli と Aquila に関する記録はありません",
 "Project Homepage": "ホームページへ",
 "Feedback": "フィードバック",
-"Data Source\\(Chinese\\)": "データのソース（中国語）" }
+"Data Source\\(Chinese\\)": "データのソース（中国語）",
+'The original author has stopped maintenance\\.<br ?/?>It is recommended to use the version maintained by SkywalkerJi: <a href="https://御坂美琴\\.cn/kc-development-tools/">https://御坂美琴\\.cn/kc-development-tools/</a>': '原作者はメンテナンスを停止しています。<br>SkywalkerJi によって維持されているバージョンを使用することをお勧めします：<a href="https://御坂美琴.cn/kc-development-tools/">https://御坂美琴.cn/kc-development-tools/</a>' }
 
 itemtypenames = [ "小口径主砲",
 "中口径主砲",
